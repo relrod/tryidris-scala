@@ -6,11 +6,10 @@ scalaVersion := "2.10.4"
 
 resolvers += Resolver.sonatypeRepo("releases")
 
-addCompilerPlugin("org.brianmckenna" %% "wartremover" % "0.8")
+//addCompilerPlugin("org.brianmckenna" %% "wartremover" % "0.8")
 
 // TODO: Figure out a way to remove cast to HTTPUrlConnection that causes this to error...
-//       Then s/only-warn-// below.
-scalacOptions in (Compile, compile) += "-P:wartremover:only-warn-traverser:org.brianmckenna.wartremover.warts.Unsafe"
+//scalacOptions in (Compile, compile) += "-P:wartremover:traverser:org.brianmckenna.wartremover.warts.Unsafe"
 
 scalacOptions ++= Seq(
   "-deprecation",
