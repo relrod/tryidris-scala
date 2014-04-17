@@ -29,6 +29,6 @@ scalacOptions ++= Seq(
 
 libraryDependencies += "io.argonaut" %% "argonaut" % "6.0.3"
 
-//libraryDependencies += "org.scalaz.stream" %% "scalaz-stream" % "0.1"
+libraryDependencies += "org.scalaz.stream" %% "scalaz-stream" % "0.1"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.3" % "test"
