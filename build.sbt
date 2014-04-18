@@ -11,6 +11,8 @@ resolvers += Resolver.sonatypeRepo("releases")
 // TODO: Figure out a way to remove cast to HTTPUrlConnection that causes this to error...
 //scalacOptions in (Compile, compile) += "-P:wartremover:traverser:org.brianmckenna.wartremover.warts.Unsafe"
 
+publishTo := Some(Resolver.file("file", new File("releases")))
+
 scalacOptions ++= Seq(
   "-deprecation",
   "-encoding", "UTF-8",
