@@ -24,8 +24,8 @@ object TryIdris {
   implicit def TokenDecodeJson: DecodeJson[Token] =
     DecodeJson(c => for {
       startChar <- c.\\.as[Int]
-      length    <- c.\\.:->-(1).as[Int]
-      metadata  <- c.\\.:->-(2).as[List[(String, String)]]
+      length    <- (c.\\ :->- 1).as[Int]
+      metadata  <- (c.\\ :->- 2).as[List[(String, String)]]
     } yield Token(startChar, length, metadata))
 
   implicit def ResponseDecodeJson: DecodeJson[InterpretResponse] =
